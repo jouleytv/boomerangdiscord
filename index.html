@@ -720,6 +720,144 @@ h2 .serif {
   line-height: 1.5;
 }
 
+/* ============== FULL CHANNEL LIST ============== */
+.full-channels {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.5rem;
+}
+
+.channel-group {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 1.8rem;
+  transition: border-color 0.3s;
+}
+
+.channel-group:hover {
+  border-color: var(--border);
+}
+
+.channel-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+  padding-bottom: 1rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.channel-group-header .group-emoji {
+  font-size: 1rem;
+}
+
+.channel-group-header .group-name {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.channel-group-header .group-private {
+  margin-left: auto;
+  background: rgba(245, 184, 0, 0.1);
+  color: var(--gold);
+  border: 1px solid rgba(245, 184, 0, 0.25);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+}
+
+.channel-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.85rem 0.4rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+  cursor: default;
+}
+
+.channel-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.channel-row + .channel-row {
+  border-top: 1px solid var(--border-soft);
+}
+
+.channel-hash {
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  font-weight: 500;
+}
+
+.channel-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.channel-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.channel-tag {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.tag-readonly {
+  background: rgba(138, 141, 176, 0.12);
+  color: var(--text-muted);
+  border: 1px solid rgba(138, 141, 176, 0.2);
+}
+
+.tag-bot {
+  background: rgba(255, 94, 58, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(255, 94, 58, 0.25);
+}
+
+.tag-private {
+  background: rgba(245, 184, 0, 0.1);
+  color: var(--gold);
+  border: 1px solid rgba(245, 184, 0, 0.25);
+}
+
+.tag-voice {
+  background: rgba(59, 165, 93, 0.1);
+  color: var(--green);
+  border: 1px solid rgba(59, 165, 93, 0.25);
+}
+
+.channel-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* ============== WHY DISCORD ============== */
 .why-section {
   background: var(--bg-base);
@@ -1303,6 +1441,215 @@ footer {
           <li><span class="ch-name">VIP Voice 🔒</span></li>
         </ul>
       </div>
+    </div>
+
+    <!-- Full detailed channel listing -->
+    <div style="margin-top: 5rem; text-align: center;">
+      <div class="section-eyebrow" style="color: var(--accent-2); margin-bottom: 1rem;">// Every Channel · Every Purpose</div>
+      <h2 style="font-size: clamp(1.6rem, 3.5vw, 2.5rem);">The full <span class="serif">channel map.</span></h2>
+      <p class="section-sub" style="margin-top: 1rem;">Every channel, what it's for, who can post.</p>
+    </div>
+
+    <div class="full-channels">
+
+      <!-- INFO -->
+      <div class="channel-group">
+        <div class="channel-group-header">
+          <span class="group-emoji">📌</span>
+          <span class="group-name">INFO</span>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">announcements <span class="channel-tag tag-readonly">Read Only</span></div>
+            <div class="channel-desc">Official news, brand updates, new casino launches across the holding, big promo drops.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">rules <span class="channel-tag tag-readonly">Read Only</span></div>
+            <div class="channel-desc">Community rules, 18+ disclaimer, responsible gambling resources, server etiquette.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">roles</div>
+            <div class="channel-desc">Self-assign your language and interests. One click, no questions asked.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="channel-group">
+        <div class="channel-group-header">
+          <span class="group-emoji">💬</span>
+          <span class="group-name">COMMUNITY</span>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">general-en</div>
+            <div class="channel-desc">Main English chat. Casual talk, daily banter, where most of the community hangs out.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">general-de</div>
+            <div class="channel-desc">German-speaking chat. Same vibe, native language. Avoids splitting conversations across languages.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">chat</div>
+            <div class="channel-desc">Cross-language overflow channel. English by default, but anyone fits in.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WINS -->
+      <div class="channel-group">
+        <div class="channel-group-header">
+          <span class="group-emoji">🏆</span>
+          <span class="group-name">WINS</span>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">biggest-wins</div>
+            <div class="channel-desc">User-posted slot wins with screenshot or bet ID verification. The live social-proof feed.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">hall-of-fame <span class="channel-tag tag-readonly">Read Only</span></div>
+            <div class="channel-desc">Curated by the team. Monthly top wins, all-time leaderboard, multiplier records.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOURNAMENTS -->
+      <div class="channel-group">
+        <div class="channel-group-header">
+          <span class="group-emoji">🎰</span>
+          <span class="group-name">TOURNAMENTS</span>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">tournaments</div>
+            <div class="channel-desc">Discord-exclusive slot competitions. Rules, live leaderboard, prize pools, discussion — all in one channel. Threads for individual events.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BETTING & TIPS -->
+      <div class="channel-group">
+        <div class="channel-group-header">
+          <span class="group-emoji">🎯</span>
+          <span class="group-name">BETTING & TIPS</span>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">tipster-picks <span class="channel-tag tag-readonly">Read Only</span></div>
+            <div class="channel-desc">Verified tipsters only. Daily picks with tracked ROI. No fluff, no garbage tips — performance is public.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">betting-talk</div>
+            <div class="channel-desc">Open discussion: sports analysis, bankroll strategy, debating tipster picks, sharing your own bets.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STREAMS -->
+      <div class="channel-group">
+        <div class="channel-group-header">
+          <span class="group-emoji">📺</span>
+          <span class="group-name">STREAMS</span>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">twitch-live <span class="channel-tag tag-bot">Bot Auto</span></div>
+            <div class="channel-desc">Auto-pinged whenever a verified partner streamer goes live. Embed shows title, slot, viewer count, link.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">clips</div>
+            <div class="channel-desc">Best streamer moments. Reactions, big wins, funny clips. Top community-voted clips get featured.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIP -->
+      <div class="channel-group">
+        <div class="channel-group-header">
+          <span class="group-emoji">👑</span>
+          <span class="group-name">VIP</span>
+          <span class="group-private">PRIVATE</span>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">vip-lounge <span class="channel-tag tag-private">VIP Only</span></div>
+            <div class="channel-desc">Exclusive chat for verified VIPs across all holding brands. Direct line to hosts and other high-tier players.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">#</span>
+          <div class="channel-info">
+            <div class="channel-name">vip-support <span class="channel-tag tag-private">VIP Only</span></div>
+            <div class="channel-desc">Ticket-based private support. Personal VIP host, no queue, real continuity between conversations.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VOICE -->
+      <div class="channel-group">
+        <div class="channel-group-header">
+          <span class="group-emoji">🔊</span>
+          <span class="group-name">VOICE</span>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">🔊</span>
+          <div class="channel-info">
+            <div class="channel-name">General Voice <span class="channel-tag tag-voice">Voice</span></div>
+            <div class="channel-desc">Open hangout. Casual chat, late-night sessions, get to know the regulars.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">🔊</span>
+          <div class="channel-info">
+            <div class="channel-name">Watch Party <span class="channel-tag tag-voice">Voice</span></div>
+            <div class="channel-desc">Watch streams together with audio. Reactions to big wins hit different in real time.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">🔊</span>
+          <div class="channel-info">
+            <div class="channel-name">Tournament Voice <span class="channel-tag tag-voice">Voice</span></div>
+            <div class="channel-desc">Active during scheduled tournaments. Communal hype, live commentary, instant reactions.</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <span class="channel-hash">🔊</span>
+          <div class="channel-info">
+            <div class="channel-name">VIP Voice <span class="channel-tag tag-private">VIP Only</span></div>
+            <div class="channel-desc">Quiet voice room for VIPs and hosts. Drop in for a chat without the public crowd.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
